@@ -18,7 +18,7 @@ char *read_stream(void)
 	}
 	while (1)
 	{
-		character = _getline();
+		character = _getchar();
 		if (character == EOF)
 		{
 			free(line);

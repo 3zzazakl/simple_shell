@@ -21,7 +21,7 @@ char *read_line(void)
 		if (eof_detect)
 		{
 			eof_msg = "End of file.\n";
-			write(STDERR_FILENO, eof_msg, _stelen(eof_msg));
+			write(STDERR_FILENO, eof_msg, _strlen(eof_msg));
 			free(line);
 			exit(EXIT_SUCCESS);
 		}

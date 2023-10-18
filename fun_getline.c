@@ -40,7 +40,7 @@ ssize_t _getline(char **line, size_t *buffer_size, int fd)
 			rch++;
 			if (rch >= *buffer_size)
 			{
-				*buffer_size += buffer_size;
+				*buffer_size += BUFFER_SIZE;
 				*line = (char *)realloc(*line, *buffer_size);
 
 			}

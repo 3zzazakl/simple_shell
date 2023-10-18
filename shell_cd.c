@@ -7,7 +7,7 @@
  */
 int shell_cd(char **args)
 {
-	char *new_dir = args[1], cwd[1024], *pwd_args[4], *oldpwd, oldargs[4];
+	char *new_dir = args[1], cwd[1024], *pwd_args[4], *oldpwd, *oldargs[4];
 
 	if (new_dir == NULL)
 	{
@@ -47,4 +47,5 @@ int shell_cd(char **args)
 		fprintf(stderr, "shell_cd: failed to set oldpwd\n");
 		return (-1);
 	}
+	return (0);
 }

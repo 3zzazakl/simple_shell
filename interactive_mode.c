@@ -11,7 +11,7 @@ void interactive_mode(void)
 	do {
 		write(0, "$ ", 2);
 		line = read_line();
-		args = token_line();
+		args = token_line(line);
 		status = execute_command(args);
 
 		free(line), free(args);

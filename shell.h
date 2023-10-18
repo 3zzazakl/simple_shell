@@ -31,6 +31,7 @@ void file_mode(char *filename);
 int shell_echo(char **args);
 int shell_exit(char **args);
 int shell_help(char **args);
+char **token_line(char *line);
 /*************String_Functions*********************/
 int _atoi(const char *str);
 int _getchar(void);

@@ -15,12 +15,13 @@ int shell_setenv(char **args)
 
 		while (environ[j] != NULL)
 		{
-			print("%s\n", environ[j]);
+			printf("%s\n", environ[j]);
 			j++;
 		}
 		return (0);
 	}
-	name = strok(args[i], "="), value = strtok(NULL, "=");
+	name = strtok(args[i], "=");
+	value = strtok(NULL, "=");
 
 	if ((name == NULL) || (value == NULL))
 		return (-1);
@@ -30,7 +31,7 @@ int shell_setenv(char **args)
 		if (strncmp(name, environ[i], strlen(name)) == 0)
 		{
 			if ((args[2] != NULL) && (strcmp(args[2], "1")) == 0)
-				snprintf(environ[i], strlen(name) + strlen(value) + 2, "%s=%s", value);
+				snprintf(environ[i], strlen(name) + strlen(value) + 2, "%s=%s", name, value);
 			return (0);
 		}
 	}
