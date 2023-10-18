@@ -41,6 +41,7 @@ char *_strchr(const char *s, int c);
 char *my_strtok(char *line, const char *delim);
 /***************ENV_FUNCTIONS**************/
 int shell_env(char **args);
+int shell_cd(char **args);
 char *shell_getenv(const char *name);
 int shell_unsetenv(char **args);
 int shell_setenv(char **args);
