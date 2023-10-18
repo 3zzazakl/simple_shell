@@ -13,5 +13,5 @@
 /************FUNCTION_DECLARATIONS******************/
 void interactive_mode(void);
 void non_interactive_mode(void);
-
+int execute_command(char **args);
 #endif /*__SIMPLE_SHELL__*/
