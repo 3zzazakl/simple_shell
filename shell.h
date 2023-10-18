@@ -17,6 +17,8 @@ int execute_command(char **args);
 ssize_t _getline(char **line, size_t *buffer_size, int fd);
 int new_process(char **args);
 char *read_line(void);
+char *read_stream(void);
+
 int shell_echo(char **args);
 int shell_exit(char **args);
 int shell_help(char **args);
