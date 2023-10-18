@@ -6,14 +6,12 @@
  */
 char *read_stream(void)
 {
-	int buffer = 1024, i, character;
-	char *line = malloc(sizeof(sizeof(char) * buffer));
-	const char *alloc_err_msg;
+	int buffer = 1024, i = 0, character;
+	char *line = malloc(buffer), *new_line;
 
-	if (line ==  NULL)
+	if (!line)
 	{
-		alloc_err_msg = "allocate error in read stream\n";
-		write(STDERR_FILENO, alloc_err_msg, _strlen(alloc_err_msg));
+		perror("malloc");
 		exit(EXIT_FAILURE);
 	}
 	while (1)
@@ -35,13 +33,13 @@ char *read_stream(void)
 		if (i >= buffer)
 		{
 			buffer += buffer;
-			line = realloc(line, buffer);
-			if (line == NULL)
+			new_line = realloc(line, buffer);
+			if (!line)
 			{
-				alloc_err_msg = "Error in allocating memory\n";
-				write(STDERR_FILENO, alloc_err_msg, _strlen(alloc_err_msg));
+				perror("realloc");
 				exit(EXIT_FAILURE);
 			}
+			line = new_line;
 		}
 	}
 }

@@ -24,15 +24,15 @@ int shell_setenv(char **args)
 		return (-1);
 	for (i = 0; environ[i] != NULL; i++)
 	{
-		if (strncmp(name, environ[i], strlen(name)) == 0)
+		if (strncmp(name, environ[i], _strlen(name)) == 0)
 		{
-			if ((args[2] != NULL) && (strcmp(args[2], "1")) == 0)
-				snprintf(environ[i], strlen(name) + strlen(value) + 2,
+			if ((args[2] != NULL) && (_strcmp(args[2], "1")) == 0)
+				snprintf(environ[i], _strlen(name) + _strlen(value) + 2,
 				"%s=%s", name, value);
 			return (0);
 		}
 	}
-	new_env = malloc(strlen(name) + strlen(value) + 2);
+	new_env = malloc(_strlen(name) + _strlen(value) + 2);
 	if (new_env == NULL)
 		return (-1);
 	sprintf(new_env, "%s=%s", name, value);

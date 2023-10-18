@@ -16,8 +16,8 @@
 #include <limits.h>
 /**********MACROS***********/
 extern char **environ;
-#define delimeter " \t\r\n\a"
-#define BUF_MAX 20231017
+#define delimeter " \t\r\n\a\""
+#define BUF_MAX 2097152
 #define BUFFER_SIZE 128
 /************FUNCTION_DECLARATIONS******************/
 void interactive_mode(void);

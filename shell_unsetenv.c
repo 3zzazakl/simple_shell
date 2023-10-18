@@ -32,7 +32,7 @@ int shell_unsetenv(char **args)
 
 	for (i = 0; environ[i] != NULL; i++)
 	{
-		if (strncmp(name, environ[i], strlen(name)) == 0)
+		if (strncmp(name, environ[i], _strlen(name)) == 0)
 		{
 			while (environ[i] != NULL)
 			{

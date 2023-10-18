@@ -17,7 +17,7 @@ char *_strtok(char *line, const char *delim)
 	if (line != NULL)
 		s = line;
 
-	while (*s != '\0' && _strchr(delim, *s) != NULL)
+	while (*s != '\0' && strchr(delim, *s) != NULL)
 		s++;
 
 	if (*s == '\0')
@@ -26,7 +26,7 @@ char *_strtok(char *line, const char *delim)
 		return (NULL);
 	}
 	t = s;
-	while (*s != '\0' && _strchr(delim, *s) == NULL)
+	while (*s != '\0' && strchr(delim, *s) == NULL)
 		s++;
 
 	if (*s != '\0')

@@ -7,7 +7,7 @@
 int _getchar(void)
 {
 	char i;
-	ssize_t z = read(STDERR_FILENO, &i, 1);
+	ssize_t z = read(STDIN_FILENO, &i, 1);
 
 	if (z == 1)
 	{

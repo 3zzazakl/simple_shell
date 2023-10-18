@@ -14,15 +14,13 @@ ssize_t _getline(char **line, size_t *buffer_size, int fd)
 
 	if (*line == NULL)
 	{
-		perror("malloc");
 		return (-1);
 	}
 	while (1)
 	{
-		cuch = read(fd, *line + rch, 1);
+		cuch = read(fd, (*line + rch), 1);
 		if (cuch < 0)
 		{
-			perror("read");
 			return (-1);
 		}
 		else if (cuch == 0 || (*line)[rch] == '\n')
@@ -42,7 +40,10 @@ ssize_t _getline(char **line, size_t *buffer_size, int fd)
 			{
 				*buffer_size += BUFFER_SIZE;
 				*line = (char *)realloc(*line, *buffer_size);
-
+				if (*line == NULL)
+				{
+					return (-1);
+				}
 			}
 		}
 	}

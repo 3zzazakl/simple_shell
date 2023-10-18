@@ -4,18 +4,18 @@
 */
 void non_interactive_mode(void)
 {
-	char *input, **arg;
+	char *input, **args;
 	int st;
 
 	while (1)
 	{
 		write(0, "$ ", 2);
 		input = read_stream();
-		arg = token_line(input);
-		st = execute_command(arg);
+		args = token_line(input);
+		st = execute_command(args);
 
 		free(input);
-		free(arg);
+		free(args);
 
 		if (st >= 0)
 		{
