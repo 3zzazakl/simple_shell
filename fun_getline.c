@@ -5,7 +5,6 @@
  *@buffer_size: max. total size of buffer
  *@fd: include the result of the function
  *Return: as need
- *
 */
 ssize_t _getline(char **line, size_t *buffer_size, int fd)
 {
