@@ -16,9 +16,11 @@ void non_interactive_mode(void);
 int execute_command(char **args);
 ssize_t _getline(char **line, size_t *buffer_size, int fd);
 int new_process(char **args);
+char *read_line(void);
 
 
 /*************String_Functions*********************/
 int _atoi(const char *str);
-
+int _getchar(void);
+int _isdigit(int c);
 #endif /*__SIMPLE_SHELL__*/
