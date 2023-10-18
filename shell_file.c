@@ -6,7 +6,7 @@
  */
 void file_mode(char *filename)
 {
-	int fd, status;
+	int fd, status = -1;
 	char *line = NULL, **args;
 	size_t buffer = 0;
 
@@ -25,6 +25,7 @@ void file_mode(char *filename)
 		free(args);
 		if (status >= 0)
 			exit(status);
-		free(line), close(fd);
 	}
+	free(line);
+	close(fd);
 }

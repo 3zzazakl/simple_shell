@@ -8,7 +8,7 @@
 int execute_command(char **args)
 {
 	size_t i = 0;
-	char *built_commands[] = {"cd", "env", "exit", "help",
+	char *builtin_commands[] = {"cd", "env", "exit", "help",
 					"setenv", "unsetenv", "echo"};
 	int (*builtin_functions[])(char **) = {&shell_cd, &shell_env,
 		&shell_exit, &shell_help, &shell_setenv, &shell_unsetenv, &shell_echo};
@@ -16,9 +16,12 @@ int execute_command(char **args)
 	if (args[0] == NULL || args[0][0] == '\0')
 		return (-1);
 
-	for (i = 0; i < sizeof(built_commands) / sizeof(built_commands[0]); i++)
+	if (_strcmp(args[0], "echo") == 0)
+		return (shell_echo(args));
+
+	for (i = 0; i < sizeof(builtin_commands) / sizeof(builtin_commands[0]); i++)
 	{
-		if (_strcmp(args[0], built_commands[i]) == 0)
+		if (_strcmp(args[0], builtin_commands[i]) == 0)
 			return ((*builtin_functions[i])(args));
 	}
 

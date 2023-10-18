@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <string.h>
 #include <sys/stat.h>
-#include <err.h>
+#include <errno.h>
 #include <signal.h>
 #include <fcntl.h>
 #include <stddef.h>
@@ -39,7 +39,7 @@ int _isdigit(int c);
 int _strcmp(const char *s1, const char *s2);
 int _strlen(const char *s);
 char *_strchr(const char *s, int c);
-char *my_strtok(char *line, const char *delim);
+char *_strtok(char *line, const char *delim);
 /***************ENV_FUNCTIONS**************/
 int shell_env(char **args);
 int shell_cd(char **args);
