@@ -8,6 +8,7 @@
 int shell_env(char **args)
 {
 	int i = 0;
+
 	args = environ;
 
 	while (args[i] != NULL)
@@ -16,5 +17,5 @@ int shell_env(char **args)
 		write(STDOUT_FILENO, "\n", 1);
 		i++;
 	}
-	return(0);
+	return (0);
 }
