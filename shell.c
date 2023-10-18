@@ -4,7 +4,7 @@
  * main - Main function for out simple shell project
  * @argc: no of input arguments.
  * @argv: Input array.
- * Return: (Success) always 0.
+ * Return: (Success) always 0.Z
  */
 
 int main(int argc, char **argv)
