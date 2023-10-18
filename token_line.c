@@ -8,15 +8,15 @@ char **token_line(char *line)
 {
 	int buff = 1024, m = 0;
 	char **tokens = malloc(buff * sizeof(char *)), *token;
+	const char *errmeg;
 
 	if (!tokens)
 	{
-		const char *errmeg = "Error in allocate memory";
-
+		errmeg = "Error in allocate memory";
 		write(STDERR_FILENO, errmeg, _strlen(errmeg));
 		exit(EXIT_FAILURE);
 	}
-	token = my_strtok(line, delimeter);
+	token = _strtok(line, delimeter);
 	while (token != NULL)
 	{
 		if (token[0] == '#')
@@ -29,13 +29,13 @@ char **token_line(char *line)
 			tokens = realloc(tokens, buff * sizeof(char *));
 			if (!tokens)
 			{
-				const char *errmeg = "Error in split line into tokens";
+				errmeg = "Error in split line into tokens";
 
 				write(STDERR_FILENO, errmeg, _strlen(errmeg));
 				exit(EXIT_FAILURE);
 			}
 		}
-		token = my_strtok(NULL, delimeter);
+		token = _strtok(NULL, delimeter);
 	}
 	tokens[m] = NULL;
 	return (tokens);

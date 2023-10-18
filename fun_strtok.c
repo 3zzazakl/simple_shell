@@ -1,12 +1,12 @@
 #include "shell.h"
 /**
- * my_strtok - function to impliment strtok function
+ * _strtok - function to impliment strtok function
  *
  * @line: input to split
  * @delim: the place split at it
  * Return: as need
 */
-char *my_strtok(char *line, const char *delim)
+char *_strtok(char *line, const char *delim)
 {
 	char *s = NULL;
 	char *t;
@@ -26,7 +26,7 @@ char *my_strtok(char *line, const char *delim)
 		return (NULL);
 	}
 	t = s;
-	while (*s != '\0' && strchr(delim, *s) == NULL)
+	while (*s != '\0' && _strchr(delim, *s) == NULL)
 		s++;
 
 	if (*s != '\0')

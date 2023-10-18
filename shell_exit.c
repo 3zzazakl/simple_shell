@@ -5,28 +5,36 @@
  * @args: input argument
  * Return: as need
 */
+
 int shell_exit(char **args)
 {
-	int x, st = 0;
-	char *n;
+	int i, status;
+	char *nl;
+	const char *err_msg;
 
 	if (args[1] != NULL)
 	{
-		for (x = 0; args[1][x] != '\0'; x++)
+		if (_strcmp(args[1], "HBTN") == 0)
 		{
-			if (!_isdigit(args[1][x]))
+			err_msg = "Invalid argument";
+			write(STDERR_FILENO, err_msg, _strlen(err_msg));
+			nl = "\n";
+			write(STDERR_FILENO, nl, 1);
+			return (EXIT_FAILURE);
+		}
+		for (i = 0; args[1][i] != '\0'; i++)
+		{
+			if (!_isdigit(args[1][i]))
 			{
-				const char *errmeg = "Invalid argument: ";
-
-				write(STDERR_FILENO, errmeg, _strlen(errmeg));
+				err_msg = "Invalid arguments\n";
 				write(STDERR_FILENO, args[1], _strlen(args[1]));
-				n = "\n";
-				write(STDERR_FILENO, n, 1);
+				nl = "\n";
+				write(STDERR_FILENO, nl, 1);
 				return (EXIT_FAILURE);
 			}
 		}
-		st = _atoi(args[1]);
-		return (st);
+		status = _atoi(args[1]);
+		return (status);
 	}
 	else
 		return (0);
