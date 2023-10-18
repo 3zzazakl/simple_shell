@@ -42,4 +42,12 @@ int shell_help(char **args);
 int _atoi(const char *str);
 int _getchar(void);
 int _isdigit(int c);
+
+
+/***************ENV_FUNCTIONS**************/
+int shell_env(char **args);
+char *shell_getenv(const char *name);
+int shell_unsetenv(char **args);
+int shell_setenv(char **args);
+
 #endif /*__SIMPLE_SHELL__*/
