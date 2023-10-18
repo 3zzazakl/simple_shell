@@ -7,6 +7,20 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <err.h>
+#include <signal.h>
+#include <fcntl.h>
+#include <stddef.h>
+#include <ctype.h>
+#include <limits.h>
+
+/**********MACROS***********/
+extern char **environ;
+#define delimeter " \t\r\n\a""
+#define BUF_MAX 20231017
+#define BUFFER_SIZE 128
 
 
 
