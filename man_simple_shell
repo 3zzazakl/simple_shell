@@ -1,0 +1,43 @@
+.TH SIMPLE_SHELL 16 "Octobor 2023" "Version 1.0" user commands
+
+.SH NAME
+Shell - Write a simple UNIX command interpreter.
+
+.SH
+.B Shell
+[A UNIX command interpreter ]
+[A Command line with arguments]
+[supporing non-interactive mode]
+[implement env built-in]
+
+.SH DESCRIPTION
+THE 
+.B Simple_SHell
+A simple Unix comamnd interpreter, designed and implemented the original unix operating system.
+
+.SH OPTIONS
+.TP
+.BR Interactive mode
+our simple works in interactive mode.
+.TP
+.BR arguments
+command lines with arguments
+.PP
+.B simple_shell
+"A simple unix interpreter"
+
+.SH SEE ALSO
+.BR ./shell()
+
+.SH AUTHOR
+WESSAM ABDELNABI    <wessamabdelnabi903@gmail.com>
+AZZAZ AKL           <azzazibrahimimakl@outlook.com>
+
+.SH NOTES
+our man page for simple shell project
+
+.SH VERSION
+this is version 0.1 of our shell project.
+
+.SH DATE
+18 OCT 2023
